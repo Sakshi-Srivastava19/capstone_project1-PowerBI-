@@ -1,0 +1,205 @@
+
+Project: In the United States, there are many stores in which a survey was
+conducted based on students i.e. how much they are spending on different kinds
+of purchases like Video games, Indoor games, Toys, Books, Gadgets etc. In the
+data set (Student Survey), Store setting is the column that explains the Type of
+location in which the store is present. By using a data set (Student Survey), try to
+extract meaningful insights.
+Industry Type: Retail Store
+Data set: Student survey
+Problem Statement: Create a Power BI Report
+1. Tabular Visualization: Format the total amount of purchase (TAP) based
+on ‘Store location’ and ‘Store setting’: -
+● If 0<TAP<35000, then records should be in red color
+● If 35000<=TAP<60000, then records should be in yellow color
+● If TAP>=60000, then records should be in Blue color
+2. Matrix Visualization: Create Matrix Visualization to show the amount
+spent on Outdoor sports across different ages and ‘Store setting’. Do the
+color formatting for the amount spent in total outdoor sports.
+3. Funnel Chart: Create a Funnel chart to show Total amount of purchase by
+‘Store setting’. Show the data labels as Percentage of First.
+4. Pie Chart: Show the total amount of purchase by different ‘Store location’
+for Suburban ‘Store setting’ only.
+Hint: Use Filter context
+5. a) Scatter plot - Video games purchase and Outdoor sports spent across
+the different ages.
+b) Sand dance plot - Indoor sports and Video games spent across the
+different age groups.
+6. Restrict data access for the given users in the User mapping table. For
+example, Mani deals with Rural areas only so she should be able to view
+the data which belongs to Rural only, not urban and suburban data.
+
+
+ANSWERS
+
+1. Tabular Visualization: Format the total amount of purchase (TAP) based on ‘Store location’ and ‘Store setting’
+Objective: Color the records based on the value of Total Amount of Purchase (TAP).
+
+Steps:
+
+Import the Student Survey dataset into Power BI.
+Create a Table Visualization using the fields: Store location, Store setting, and Total Amount of Purchase (TAP).
+Add conditional formatting to the TAP column:
+Click on the TAP column in the table.
+Go to the Format pane, and select Conditional Formatting > Background Color.
+Set rules for the colors:
+For TAP < 35000, set the color to Red.
+For 35000 <= TAP < 60000, set the color to Yellow.
+For TAP >= 60000, set the color to Blue.
+
+2. Matrix Visualization: Show the amount spent on Outdoor sports across different ages and ‘Store setting’
+Objective: Create a matrix to show the amount spent on Outdoor sports across different ages and store settings, with color formatting for the amounts.
+
+Steps:
+
+Create a Matrix Visualization.
+Add Age to the Rows, Store setting to the Columns, and Outdoor sports spent to the Values.
+To add color formatting, follow similar steps to the previous task:
+Click on the Outdoor sports spent field in the matrix.
+Go to Conditional Formatting and choose to format the Font Color or Background Color based on values.
+Set your color rules (e.g., red for lower amounts, blue for higher amounts, or custom rules based on your needs).
+3. Funnel Chart: Total Amount of Purchase by ‘Store setting’
+Objective: Create a funnel chart to show the total amount of purchase by store setting, with data labels as percentage of the first.
+
+Steps:
+
+Create a Funnel Chart.
+Add Store setting to the Group field.
+Add TAP (Total Amount of Purchase) to the Values field.
+In the Format pane, turn on Data Labels.
+Set the Data label value to show the percentage of the first.
+4. Pie Chart: Total amount of purchase by different ‘Store location’ for Suburban ‘Store setting’ only
+Objective: Create a pie chart to show the total amount of purchase for different store locations in suburban store settings only.
+
+Steps:
+
+Create a Pie Chart visualization.
+Add Store location to the Legend field and TAP (Total Amount of Purchase) to the Values field.
+Apply a Filter on the Store setting column to only show the data for Suburban.
+Adjust the Data Labels as necessary to show the values in the pie chart.
+5. a) Scatter plot - Video games purchase and Outdoor sports spent across the different ages
+Objective: Create a scatter plot to show the relationship between video game purchases and outdoor sports spending across different age groups.
+
+Steps:
+
+Create a Scatter Plot visualization.
+Add Age to the Axis field.
+Add Video games purchase to the X-Axis and Outdoor sports spent to the Y-Axis.
+This scatter plot will show how these two amounts vary across different ages.
+5. b) Sand dance plot - Indoor sports and Video games spent across the different age groups
+Objective: Create a sand dance plot (also known as a stacked area chart) to show the spending on Indoor sports and Video games across different age groups.
+
+Steps:
+
+Create a Stacked Area Chart visualization.
+Add Age to the Axis field.
+Add Indoor sports spent and Video games spent to the Values field.
+This chart will show how the spending in both categories evolves across different age groups.
+6. Restrict Data Access for Specific Users (User Mapping Table)
+Objective: Set row-level security (RLS) to restrict data access based on user roles.
+
+Steps:
+
+In Power BI Desktop, go to Modeling > Manage Roles.
+Create a new role, such as RuralAccess.
+For the role, apply a DAX filter on the Store setting column to filter only Rural data. For example:
+[Store setting] = "Rural"
+Publish the report to Power BI Service and assign the role to the appropriate user, e.g., Mani.
+In the Power BI Service, go to Security for the dataset and assign the role to Mani, ensuring that she will only see the Rural data.
+
+
+https://app.powerbi.com/groups/b0aae5fa-660d-4f76-86f8-6a5282eb7fba/dashboards/dbb429d5-bdce-4142-92ee-e3a2d0a6c09b?experience=power-bi
+
+
+
+7. Publish the report on Power BI cloud service and Design the Master
+Dashboard consisting of Funnel chart and scatter plots. Then create a
+schedule refresh for six times in every 4 hours for the Dashboard in a day.
+8. Use Q&A feature of Power BI,
+a) To show average age of students
+b) Donut chart for total amount of purchases by ‘Store location
+
+7. Publish the Report to Power BI Cloud Service and Design the Master Dashboard
+a) Publish the Report to Power BI Cloud Service
+Save your report in Power BI Desktop.
+In Power BI Desktop, go to Home and click on Publish.
+Sign in to your Power BI Service account (if prompted).
+Select the workspace where you want to publish the report, then click Select.
+After the report is published successfully, open Power BI Service in your browser.
+Navigate to the workspace where the report is located.
+b) Design the Master Dashboard
+Now, to create a Master Dashboard:
+
+Create a New Dashboard:
+
+In Power BI Service, click on Create from the left-hand menu.
+Select Dashboard and provide a name for your dashboard (e.g., "Master Dashboard").
+Pin Visuals to the Dashboard:
+
+Open the report you've just published.
+Pin the relevant visualizations to the dashboard by hovering over the visual and clicking the Pin icon (it looks like a pin).
+Pin the Funnel Chart for Total Amount of Purchase by Store Setting.
+Pin the Scatter Plot for Video Games Purchase vs. Outdoor Sports Spend by Age.
+If desired, you can also pin other important visuals for easy access.
+Organize Your Dashboard:
+
+After pinning the visuals, you can organize them on your dashboard to create a cohesive layout.
+Resize and move the visuals around to fit the layout you want.
+c) Create a Scheduled Refresh for the Dashboard
+Set up Data Source Credentials:
+
+In Power BI Service, go to the Dataset settings.
+Ensure your data source credentials are properly set up. If you are using an on-premises data source, ensure that the On-Premises Data Gateway is installed and configured.
+Schedule the Refresh:
+
+In the Power BI Service, go to the workspace where your report resides.
+Click on the More options (three dots) next to the dataset and choose Settings.
+In the Dataset Settings page, scroll down to Scheduled refresh.
+Turn on Scheduled refresh and set the refresh frequency to 6 times a day, spaced every 4 hours.
+Set the time range for the first refresh (e.g., start from 12:00 AM).
+Set the refresh frequency to repeat every 4 hours, ensuring 6 refreshes in a day.
+Save the Refresh Settings.
+
+8. Use Q&A Feature of Power BI
+a) To Show the Average Age of Students Using Q&A
+
+Open your report or dashboard in Power BI Service.
+On the report page or dashboard, click on the Q&A icon (the question mark) on the top-right corner of your screen.
+Type your query in the Q&A box:
+Question: What is the average age of students?
+Power BI will automatically generate a card or table that shows the average age of students based on the dataset.
+b) Donut Chart for Total Amount of Purchases by Store Location Using Q&A
+Open your report or dashboard in Power BI Service.
+Click on the Q&A icon on the top-right corner.
+Type your query in the Q&A box:
+Question: Total amount of purchases by Store location
+Power BI will generate a chart based on the question.
+To specifically make it a donut chart, click on the Visualizations pane on the right and choose the Donut Chart.
+The chart will display the total amount of purchases by each store location.
+You can further customize the chart by adding or modifying filters if needed.
+
+https://app.powerbi.com/groups/b0aae5fa-660d-4f76-86f8-6a5282eb7fba/dashboards/c6a84599-e674-4bbb-8dc7-3d58085ae03b?experience=power-bi
+
+Final Steps Summary:
+Tabular Visualization showing TAP with color formatting.
+
+Matrix Visualization for Outdoor sports spending across age and store setting.
+
+Funnel Chart for Total Purchase by Store setting.
+
+Pie Chart for Total Purchase by Store location in Suburban settings.
+
+Scatter Plot for Video games and Outdoor sports spending.
+
+Stacked Area Chart (Sand Dance Plot) for Indoor sports and Video games spending.
+
+Row-level security (RLS) for user-specific data access.
+
+Once all of these elements are in place, you should have a comprehensive Power BI report that provides insightful visualizations based on the student survey data.
+
+Now published the report to the Power BI Cloud Service.
+
+created the Master Dashboard, with relevant visuals like the Funnel Chart and Scatter Plot, and pinned them to the dashboard.
+
+You’ve set up a scheduled refresh for the report to ensure that data is refreshed 6 times every 4 hours throughout the day.
+You've used Q&A in Power BI to create insights, like finding the average age of students and creating a Donut Chart for total purchases by store location.
